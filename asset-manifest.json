@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/fellowship-tracker/static/css/main.f855e6bc.css",
-    "main.js": "/fellowship-tracker/static/js/main.6b0f59e4.js",
-    "static/js/453.3c2791e1.chunk.js": "/fellowship-tracker/static/js/453.3c2791e1.chunk.js",
-    "static/media/logo.svg": "/fellowship-tracker/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/fellowship-tracker/index.html",
-    "main.f855e6bc.css.map": "/fellowship-tracker/static/css/main.f855e6bc.css.map",
-    "main.6b0f59e4.js.map": "/fellowship-tracker/static/js/main.6b0f59e4.js.map",
-    "453.3c2791e1.chunk.js.map": "/fellowship-tracker/static/js/453.3c2791e1.chunk.js.map"
+    "main.css": "/FellowshipTracker/static/css/main.f855e6bc.css",
+    "main.js": "/FellowshipTracker/static/js/main.ce996043.js",
+    "static/js/453.3c2791e1.chunk.js": "/FellowshipTracker/static/js/453.3c2791e1.chunk.js",
+    "static/media/logo.svg": "/FellowshipTracker/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/FellowshipTracker/index.html",
+    "main.f855e6bc.css.map": "/FellowshipTracker/static/css/main.f855e6bc.css.map",
+    "main.ce996043.js.map": "/FellowshipTracker/static/js/main.ce996043.js.map",
+    "453.3c2791e1.chunk.js.map": "/FellowshipTracker/static/js/453.3c2791e1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.6b0f59e4.js"
+    "static/js/main.ce996043.js"
   ]
 }
