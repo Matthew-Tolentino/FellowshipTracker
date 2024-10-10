@@ -1,0 +1,22 @@
+.map-container {
+  position: relative;
+  display: inline-block;
+}
+
+.map-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.path-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.progress-bar {
+  margin-top: 20px;
+  width: 100%;
+}
