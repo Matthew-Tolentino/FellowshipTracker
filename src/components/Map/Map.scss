@@ -1,5 +1,16 @@
 .map-section {
+  height: 50%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.leaflet-container {
+  border-radius: 10%;
+  box-shadow: 3px 3px 15px rgb(0,0,0,0.15);
+}
+
+div.leaflet-control-attribution.leaflet-control {
+  visibility: hidden !important;
 }
