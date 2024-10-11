@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <div className="App">
-        <h1>Interactive Map with Path Drawing</h1>
+        <h1>Fellowship Progress</h1>
         {/* <MapContainer /> */}
         <Map />
       </div>
