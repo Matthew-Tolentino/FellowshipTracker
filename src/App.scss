@@ -11,6 +11,8 @@ body {
   text-align: center;
   padding: 1em;
   // margin: 1em;
+  display: flex;
+  flex-direction: column;
 }
 
 h1 {

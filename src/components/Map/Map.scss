@@ -1,13 +1,14 @@
 .map-section {
-  height: 50%;
+  // height: auto;
   width: 100%;
   display: flex;
+  flex-grow: 1;
   align-items: center;
   justify-content: center;
 }
 
 .leaflet-container {
-  border-radius: 5%;
+  border-radius: 5px;
   box-shadow: 3px 3px 15px rgb(0,0,0,0.15);
 }
 

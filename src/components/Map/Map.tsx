@@ -51,14 +51,14 @@ const Map: React.FC = () => {
       // let a  = L.latLng([1,2,3]);
       // let b = L.latLng([1,2])
       // console.log(data.coord, a, b);
-      console.log(L.latLng(data.coord));
-      map.setView(L.latLng(data.coord), map.getZoom());
+      // console.log(L.latLng(data.coord));
+      map.setView(L.latLng(data.coord), 1);
     }, [map, data.coord]);
 
     return null;
   }
 
-  const [progress, setProgress] = useState(0);
+  const [progress, setProgress] = useState(5);
 
   // useEffect(() => {
   //   const interval = setInterval(() => {
@@ -72,9 +72,9 @@ const Map: React.FC = () => {
     <div className='map-section'>
       <MapContainer
         center={center}
-        zoom={-1}
+        // zoom={-2}
         minZoom={-1}
-        maxZoom={3}
+        maxZoom={1}
         crs={L.CRS.Simple}
         style={{height: '100%', width: '75%'}}
         maxBoundsViscosity={1}
@@ -85,11 +85,11 @@ const Map: React.FC = () => {
         {/* <Marker position={center} icon={iconMarker}>
           <Popup>This is a marker on the image for testing</Popup>
         </Marker> */}
-        <Polyline positions={mapData.pathCoords} color='red'>
+        <Polyline positions={mapData.pathCoords} color={mapData.totalPathColor} weight={10} stroke={true}>
           <Popup>This is the path.</Popup>
         </Polyline>
 
-        <Polyline positions={mapData.getPathProgress(progress)} color='green'>
+        <Polyline positions={mapData.getPathProgress(progress)} color={mapData.progressPathColor} weight={8}>
           <Popup>This is the progress path.</Popup>
         </Polyline>
 

@@ -4,9 +4,14 @@ interface IMapData {
   pathCoords: LatLngExpression[]
 }
 
+const c = 'rgb(169, 185, 245, 0.5)'
+const c2 = 'rgb(84, 118, 247, 0.95)'
+
 class MapData implements IMapData {
   pathCoords: LatLngExpression[] = pathCoordinates;
-  
+  totalPathColor: string = c;
+  progressPathColor: string = c2;
+
   constructor() { }
 
   // percentage will be 0-100
