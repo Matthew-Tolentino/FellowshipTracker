@@ -1,24 +1,7 @@
+import { Member } from "../Models/Member";
+
 interface IFellowship {
   members: Member[];
-}
-
-export interface Member {
-  name: string;
-  character: Character;
-  distances: number[];
-  totalDistance: number;
-}
-
-export enum Character {
-  Frodo = 'Frodo',
-  Sam = 'Sam',
-  Mary = 'Mary',
-  Pippin = 'Pippin',
-  Boromir = 'Boromir',
-  Aragorn = 'Aragorn',
-  Gimli = 'Gimli',
-  Legolas = 'Legolas',
-  Gandalf = 'Gandalf'
 }
 
 class Fellowship {
