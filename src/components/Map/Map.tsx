@@ -1,15 +1,17 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import L, { LatLngExpression } from 'leaflet';
-import { MapContainer, ImageOverlay, Marker, Polyline, useMap, Popup } from 'react-leaflet';
+import { MapContainer, ImageOverlay, Marker, Polyline, useMap, Popup, useMapEvent } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import './Map.scss';
-import LOTRmap from '../../imgs/MiddleEarth.jpg'
+// import LOTRmap from '../../imgs/MiddleEarth.jpg'
+import LOTRmap from '../../imgs/lotrmap.jpeg'
 
 import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png';
 import markerIcon from 'leaflet/dist/images/marker-icon.png';
 import markerShadow from 'leaflet/dist/images/marker-shadow.png';
+import MapData from './MapData/MapData';
 
-const imageBounds: [[number, number], [number, number]] = [[0,0], [2400, 2424]];
+const imageBounds: [[number, number], [number, number]] = [[0,0], [2400, 3200]];
 
 const iconMarker = new L.Icon({
   iconUrl: markerIcon,
@@ -21,15 +23,18 @@ const iconMarker = new L.Icon({
   shadowSize: [41, 41], // Shadow size of the marker icon
 });
 
-const Map: React.FC = () => {
-  const center: LatLngExpression = [1200, 1212];
+const ClickHandler = () => {
+  useMapEvent('click', (e) => {
+    const {lat, lng} = e.latlng;
+    console.log(`[${Math.trunc(lat)}, ${Math.trunc(lng)}]`);
+  });
+  return null;
+}
 
-  const pathCoordinates: LatLngExpression[] = [
-    [500, 500],
-    [1000, 1000],
-    [1500, 1200],
-    [2000, 1800]
-  ]
+const Map: React.FC = () => {
+  const center: LatLngExpression = [1200, 1600];
+
+  const mapData = new MapData();
 
   const FitBounds = () => {
     const map = useMap();
@@ -40,28 +45,58 @@ const Map: React.FC = () => {
     return null;
   }
 
+  const SetViewOnFocus = (data: any) => {
+    const map = useMap();
+    useEffect(() => {
+      // let a  = L.latLng([1,2,3]);
+      // let b = L.latLng([1,2])
+      // console.log(data.coord, a, b);
+      console.log(L.latLng(data.coord));
+      map.setView(L.latLng(data.coord), map.getZoom());
+    }, [map, data.coord]);
+
+    return null;
+  }
+
+  const [progress, setProgress] = useState(0);
+
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setProgress(prev => prev + .1);
+  //   }, 100);
+
+  //   return () => clearInterval(interval);
+  // }, []);
+
   return (
     <div className='map-section'>
       <MapContainer
         center={center}
-        zoom={3}
+        zoom={-1}
         minZoom={-1}
-        maxZoom={10}
+        maxZoom={3}
         crs={L.CRS.Simple}
         style={{height: '100%', width: '75%'}}
         maxBoundsViscosity={1}
       >
         <ImageOverlay url={LOTRmap} bounds={imageBounds}/>
         <FitBounds />
-        <Marker position={center} icon={iconMarker}>
+        <SetViewOnFocus coord={mapData.getPathProgress(progress).at(-1)}/>
+        {/* <Marker position={center} icon={iconMarker}>
           <Popup>This is a marker on the image for testing</Popup>
-        </Marker>
-        <Polyline positions={pathCoordinates} color='red'>
+        </Marker> */}
+        <Polyline positions={mapData.pathCoords} color='red'>
           <Popup>This is the path.</Popup>
         </Polyline>
+
+        <Polyline positions={mapData.getPathProgress(progress)} color='green'>
+          <Popup>This is the progress path.</Popup>
+        </Polyline>
+
+        <ClickHandler />
       </MapContainer>
     </div>
   );
 }
 
-export default Map; 
+export default Map;
