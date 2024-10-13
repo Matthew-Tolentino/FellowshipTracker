@@ -34,10 +34,12 @@
 }
 
 .members-header span {
-  padding: 5px;
+  padding: 3px;
   display: flex;
   flex-grow: 1;
   justify-content: center;
+
+  font-size: large;
 }
 
 .member {
