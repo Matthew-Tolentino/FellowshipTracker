@@ -5,8 +5,8 @@
   width: 50%;
   // border: green;
   // border-style: solid;
-  overflow-y: scroll;
-  overflow-x: hidden;
+  overflow-y: hidden;
+  overflow-x: visible;
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -22,6 +22,7 @@
 .members-section.open {
   // width: 100%;
   transform: translateX(0);
+  position: absolute;
 }
 
 .members-header {
@@ -40,6 +41,16 @@
   justify-content: center;
 
   font-size: large;
+}
+
+.members-toggle {
+  background: none;
+  border: none;
+  padding: 5px;
+}
+
+.members-section .members-toggle {
+  transform: translateX(0px);
 }
 
 .member {
@@ -71,4 +82,10 @@
   justify-content: space-around;
   padding-left: 1em;
   padding-right: 1em;
+}
+
+@media (max-width: $bp-mobile) {
+  .members-section {
+    width: 100%;
+  }
 }

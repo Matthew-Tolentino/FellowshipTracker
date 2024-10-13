@@ -5,6 +5,11 @@ $base-color3: #95b6c9;
 
 $background-img: url(./imgs/background.jpg);
 
+$bp-desktop: 1800px;
+$bp-laptop: 1024px;
+$bp-tablet: 768px;
+$bp-mobile: 560px;
+
 // Global defaults
 * {
   padding: 0;

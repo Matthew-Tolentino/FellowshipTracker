@@ -10,6 +10,8 @@ import Legolas from '../../imgs/Legolas.jpg';
 import Merry from '../../imgs/Merry.jpg';
 import Pippin from '../../imgs/Pippin.jpg';
 import Sam from '../../imgs/Sam.jpg';
+import { useState } from 'react';
+import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
 function GetPortrait(character: Character) {
   switch (character) {
@@ -39,11 +41,19 @@ interface IMembers {
 }
 
 const Members: React.FC<IMembers> = ({members}) => {
+  const [open, setOpen] = useState(false);
+
+  const toggleOpen = () => {
+    setOpen(!open);
+  };
+
   return (
-    <div className="members-section open p-background">
+    <div className={`members-section p-background ${open ? 'open' : ''}`}>
       <div className="members-header">
         <span>Fellowship of the Ring</span>
-        <button>click</button>
+        <button className='members-toggle' onClick={toggleOpen}>
+          { open ? <IoIosArrowBack /> : <IoIosArrowForward /> }
+        </button>
       </div>
       {
         members.map((member: Member, index: number) => {
