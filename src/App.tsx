@@ -6,20 +6,20 @@ import { fetchMembersCSV } from './Util/FetchService';
 import Members from './components/Members/Members';
 
 function App() {
-  const [membersCsv, setMembersCsv] = useState<any>('');
+  const [members, setMembers] = useState<any>('');
+  const [progress, setProgress] = useState(5);
 
   useEffect(() => {
-    fetchMembersCSV(setMembersCsv, 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR1W4kwRYaGYKGPfC5dIAHhtVkSI8CWhowpxuut0LCNJXXrVMQEFKpK64TXyi7GlSHETxRWc-dlKwlt/pub?output=csv');
-  });
+    fetchMembersCSV(setMembers, 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR1W4kwRYaGYKGPfC5dIAHhtVkSI8CWhowpxuut0LCNJXXrVMQEFKpK64TXyi7GlSHETxRWc-dlKwlt/pub?output=csv');
+  }, []);
 
   return (
-    // <div className="App">
-      <div className="App">
-        <h1>Fellowship Progress</h1>
-        <Map />
-        {/* <Members /> */}
+    <>
+      <Members />
+      <div className="App">        
+        <Map progress={progress} members={members}/>
       </div>
-    // </div>
+    </>
   );
 }
 

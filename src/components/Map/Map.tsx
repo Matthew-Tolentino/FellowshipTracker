@@ -10,6 +10,7 @@ import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png';
 import markerIcon from 'leaflet/dist/images/marker-icon.png';
 import markerShadow from 'leaflet/dist/images/marker-shadow.png';
 import MapData from './MapData/MapData';
+import { Member } from '../../Models/Member';
 
 const imageBounds: [[number, number], [number, number]] = [[0,0], [2400, 3200]];
 
@@ -31,70 +32,61 @@ const ClickHandler = () => {
   return null;
 }
 
-const Map: React.FC = () => {
-  const center: LatLngExpression = [1200, 1600];
+const FitBounds = () => {
+  const map = useMap();
+  useEffect(() => {
+    map.fitBounds(imageBounds);
+    map.setMaxBounds(imageBounds);
+  }, [map]);
+  return null;
+}
 
+const SetViewOnFocus = (data: any) => {
+  const map = useMap();
+  useEffect(() => {
+    map.setView(L.latLng(data.coord), 0);
+  }, [map, data.coord]);
+  return null;
+}
+
+interface IMap {
+  progress: number;
+  members: Member[]
+}
+
+const Map: React.FC<IMap> = ({ progress, members }) => {
+  const center: LatLngExpression = [1200, 1600];
   const mapData = new MapData();
 
-  const FitBounds = () => {
-    const map = useMap();
-    useEffect(() => {
-      map.fitBounds(imageBounds);
-      map.setMaxBounds(imageBounds);
-    }, [map]);
-    return null;
-  }
-
-  const SetViewOnFocus = (data: any) => {
-    const map = useMap();
-    useEffect(() => {
-      // let a  = L.latLng([1,2,3]);
-      // let b = L.latLng([1,2])
-      // console.log(data.coord, a, b);
-      // console.log(L.latLng(data.coord));
-      map.setView(L.latLng(data.coord), 1);
-    }, [map, data.coord]);
-
-    return null;
-  }
-
-  const [progress, setProgress] = useState(5);
-
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setProgress(prev => prev + .1);
-  //   }, 100);
-
-  //   return () => clearInterval(interval);
-  // }, []);
-
   return (
-    <div className='map-section'>
-      <MapContainer
-        center={center}
-        // zoom={-2}
-        minZoom={-1}
-        maxZoom={1}
-        crs={L.CRS.Simple}
-        style={{height: '100%', width: '75%'}}
-        maxBoundsViscosity={1}
-      >
-        <ImageOverlay url={LOTRmap} bounds={imageBounds}/>
-        <FitBounds />
-        <SetViewOnFocus coord={mapData.getPathProgress(progress).at(-1)}/>
-        {/* <Marker position={center} icon={iconMarker}>
-          <Popup>This is a marker on the image for testing</Popup>
-        </Marker> */}
-        <Polyline positions={mapData.pathCoords} color={mapData.totalPathColor} weight={10} stroke={true}>
-          <Popup>This is the path.</Popup>
-        </Polyline>
+    <div className="map">
+      <h1>Fellowship Progress</h1>
+      <div className='map-section'>
+        <MapContainer
+          center={center}
+          minZoom={-1}
+          maxZoom={1}
+          crs={L.CRS.Simple}
+          style={{height: '100%', width: '100%'}}
+          maxBoundsViscosity={1}
+        >
+          <ImageOverlay url={LOTRmap} bounds={imageBounds}/>
+          <FitBounds />
+          <SetViewOnFocus coord={mapData.getPathProgress(progress).at(-1)}/>
+          {/* <Marker position={center} icon={iconMarker}>
+            <Popup>This is a marker on the image for testing</Popup>
+          </Marker> */}
+          <Polyline positions={mapData.pathCoords} color={mapData.totalPathColor} weight={10} stroke={true}>
+            <Popup>This is the path.</Popup>
+          </Polyline>
 
-        <Polyline positions={mapData.getPathProgress(progress)} color={mapData.progressPathColor} weight={8}>
-          <Popup>This is the progress path.</Popup>
-        </Polyline>
+          <Polyline positions={mapData.getPathProgress(progress)} color={mapData.progressPathColor} weight={8}>
+            <Popup>This is the progress path.</Popup>
+          </Polyline>
 
-        <ClickHandler />
-      </MapContainer>
+          <ClickHandler />
+        </MapContainer>
+      </div>
     </div>
   );
 }

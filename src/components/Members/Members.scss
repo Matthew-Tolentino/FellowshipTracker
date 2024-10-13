@@ -1,0 +1,19 @@
+.members-section {
+  border: green;
+  border-style: solid;
+  overflow: hidden;
+  position: absolute;
+  // height: calc(100% - 32px);
+  height: 100%;
+  z-index: 1000;
+
+  width: 50%;
+
+  transition: 1s;
+  transform: translateX(-95%);
+}
+
+.members-section.open {
+  // width: 100%;
+  transform: translateX(0);
+}
