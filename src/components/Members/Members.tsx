@@ -42,7 +42,7 @@ const Members: React.FC<IMembers> = ({members}) => {
   return (
     <div className="members-section open p-background">
       <div className="members-header">
-        <span>Fellowship</span>
+        <span>Fellowship of the Ring</span>
         <button>click</button>
       </div>
       {
