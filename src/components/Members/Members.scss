@@ -3,9 +3,10 @@
 .members-section {
   height: 100%;
   width: 50%;
-  border: green;
-  border-style: solid;
-  overflow: hidden;
+  // border: green;
+  // border-style: solid;
+  overflow-y: scroll;
+  overflow-x: hidden;
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -26,11 +27,29 @@
   display: flex;
   justify-content: space-between;
   
-  border:pink;
-  border-style: solid;
+  // border:pink;
+  // border-style: solid;
+  border-bottom: solid;
+}
+
+.members-header span {
+  padding: 5px;
 }
 
 .member {
-  border:solid;
-  border-style: red;
+  display: flex;
+  flex-grow: 1;
+
+  border-bottom: solid;
+  border-right: solid;
+
+  // border: red;
+  // border-style: solid;
+}
+
+.member img {
+  // flex-grow: 1;
+  max-width: 100%;
+  height: calc((100vh - 50px) / 8);
+  object-fit: contain;
 }

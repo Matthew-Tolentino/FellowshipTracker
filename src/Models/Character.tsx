@@ -1,7 +1,7 @@
 export enum Character {
   Frodo = 'Frodo',
   Sam = 'Sam',
-  Mary = 'Mary',
+  Merry = 'Merry',
   Pippin = 'Pippin',
   Boromir = 'Boromir',
   Aragorn = 'Aragorn',

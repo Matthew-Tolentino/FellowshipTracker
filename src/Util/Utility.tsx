@@ -14,7 +14,7 @@ export function filterDataCsv(data: string) {
         name: m[1],
         character: m[0] as Character,
         distances: distances,
-        totalDistance: 15
+        totalDistance: distances.reduce((a, v) => a + v, 0)
       } as Member;
 
       members.push(member);
