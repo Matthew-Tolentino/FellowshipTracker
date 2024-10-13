@@ -40,7 +40,7 @@ interface IMembers {
 
 const Members: React.FC<IMembers> = ({members}) => {
   return (
-    <div className="members-section open">
+    <div className="members-section open p-background">
       <div className="members-header">
         <span>Fellowship</span>
         <button>click</button>
@@ -50,9 +50,13 @@ const Members: React.FC<IMembers> = ({members}) => {
           return (
             <div className='member'>
               <img src={GetPortrait(member.character)}/>
-              <span>Character: {member.character}</span>
-              <span>Name: {member.name}</span>
-              <span>Total Distance: {member.totalDistance.toFixed(2)} mi</span>
+              <div className='member-cell-2'>
+                <span>{member.character}</span>
+                <span>{member.name}</span>
+              </div>
+              <div className='member-cell-3'>
+                <span>{member.totalDistance.toFixed(2)} mi</span>
+              </div>
             </div>
           )
         })
