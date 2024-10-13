@@ -1,13 +1,17 @@
+@import '../../styles.scss';
+
 .members-section {
+  height: 100%;
+  width: 50%;
   border: green;
   border-style: solid;
   overflow: hidden;
   position: absolute;
-  // height: calc(100% - 32px);
-  height: 100%;
-  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  background: $base-color3;
+  z-index: 10000;
 
-  width: 50%;
 
   transition: 1s;
   transform: translateX(-95%);
@@ -16,4 +20,17 @@
 .members-section.open {
   // width: 100%;
   transform: translateX(0);
+}
+
+.members-header {
+  display: flex;
+  justify-content: space-between;
+  
+  border:pink;
+  border-style: solid;
+}
+
+.member {
+  border:solid;
+  border-style: red;
 }

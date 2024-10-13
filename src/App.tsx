@@ -6,7 +6,7 @@ import { fetchMembersCSV } from './Util/FetchService';
 import Members from './components/Members/Members';
 
 function App() {
-  const [members, setMembers] = useState<any>('');
+  const [members, setMembers] = useState<any>([]);
   const [progress, setProgress] = useState(5);
 
   useEffect(() => {
@@ -15,7 +15,7 @@ function App() {
 
   return (
     <>
-      <Members />
+      <Members members={members}/>
       <div className="App">        
         <Map progress={progress} members={members}/>
       </div>
