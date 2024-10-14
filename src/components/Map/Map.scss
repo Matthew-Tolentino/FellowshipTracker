@@ -23,6 +23,21 @@ div.leaflet-control-attribution.leaflet-control {
   visibility: hidden !important;
 }
 
+a.leaflet-control-zoom-in,
+a.leaflet-control-zoom-out {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  border: none;
+}
+
+a.leaflet-control-zoom-in:hover,
+a.leaflet-control-zoom-out:hover {
+  background-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+div.leaflet-control-zoom {
+  border: none !important;
+}
+
 h1 {
   font-size: 2rem;
   padding-bottom: 0.5em;

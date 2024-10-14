@@ -16,7 +16,7 @@ class MapData implements IMapData {
 
   // percentage will be 0-100
   getPathProgress(percentage: number) {
-    let {progressPoint, index} = this.getPathProgressPoint(percentage / 100)
+    let {progressPoint, index} = this.getPathProgressPoint(percentage)
 
     let progressLine = this.pathCoords.slice(0, index);
 

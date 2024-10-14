@@ -14,12 +14,16 @@ export function filterDataCsv(data: string) {
         name: m[1],
         character: m[0] as Character,
         distances: distances,
-        totalDistance: distances.reduce((a, v) => a + v, 0)
+        totalDistance: distances.reduce((p, c, i , a) => {
+          return i < a.length - 1 ? p + c : p
+        }, 0)
       } as Member;
 
       members.push(member);
     }
   });
+
+  // console.log(members);
 
   return members;
 }
