@@ -1,7 +1,7 @@
 import { Character } from "../Models/Character";
 import { Member } from "../Models/Member";
 
-export function filterDataCsv(data: string) {
+export function filterDataCsv(data: string): Member[] {
   let members: Member[] = [];
   let lines = data.split('\n')
       
@@ -28,6 +28,11 @@ export function filterDataCsv(data: string) {
   return members;
 }
 
-export function isCharacter(value: string) {
+export function isCharacter(value: string): boolean {
   return Object.values(Character).includes(value as Character);
+}
+
+export function addDays(date: Date, days: number): Date {
+  const newDate = date.setDate(date.getDate() + days);
+  return new Date(newDate);
 }
