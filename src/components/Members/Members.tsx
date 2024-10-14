@@ -48,30 +48,32 @@ const Members: React.FC<IMembers> = ({members}) => {
   };
 
   return (
-    <div className={`members-section p-background ${open ? 'open' : ''}`}>
-      <div className="members-header">
-        <span>Fellowship of the Ring</span>
-        <button className='members-toggle' onClick={toggleOpen}>
-          { open ? <IoIosArrowBack /> : <IoIosArrowForward /> }
-        </button>
+    <>
+      <div className={`members-section p-background ${open ? 'open' : ''}`}>
+        <div className="members-header">
+          <span>Fellowship of the Ring</span>
+        </div>
+        {
+          members.map((member: Member, index: number) => {
+            return (
+              <div className='member'>
+                <img src={GetPortrait(member.character)}/>
+                <div className='member-cell-2'>
+                  <span>{member.character}</span>
+                  <span>{member.name}</span>
+                </div>
+                <div className='member-cell-3'>
+                  <span>{member.totalDistance.toFixed(2)} mi</span>
+                </div>
+              </div>
+            )
+          })
+        }
       </div>
-      {
-        members.map((member: Member, index: number) => {
-          return (
-            <div className='member'>
-              <img src={GetPortrait(member.character)}/>
-              <div className='member-cell-2'>
-                <span>{member.character}</span>
-                <span>{member.name}</span>
-              </div>
-              <div className='member-cell-3'>
-                <span>{member.totalDistance.toFixed(2)} mi</span>
-              </div>
-            </div>
-          )
-        })
-      }
-    </div>
+      <button className='members-toggle' onClick={toggleOpen}>
+        { open ? <IoIosArrowBack /> : <IoIosArrowForward /> }
+      </button>
+    </>
   )
 }
 

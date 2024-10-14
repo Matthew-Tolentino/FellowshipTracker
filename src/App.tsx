@@ -16,7 +16,7 @@ function App() {
   return (
     <>
       <Members members={members}/>
-      <div className="App">        
+      <div className="App p-background">        
         <Map progress={progress} members={members}/>
       </div>
     </>
