@@ -1,17 +1,12 @@
-import { filterDataCsv } from "./Utility";
+import { filterFellowshipCsv } from "./Utility";
 
-export const fetchMembersCSV = async (setMembers: any, url: string) => {
+export const fetchFellowshipCsv = async (setFellowship: any, url: string) => {
   fetch(url)
     .then(async (res) => {
-      let data = await res.text()
+      let data = await res.text();
 
-      let members = filterDataCsv(data);
+      let fellowship = filterFellowshipCsv(data);
 
-      // console.log(members);
-
-      setMembers(members);
-    })
-    .catch((err) => {
-      console.log(`${err.status} - ${err.message}`)
+      setFellowship(fellowship);
     });
 }

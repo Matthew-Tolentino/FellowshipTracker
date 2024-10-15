@@ -6,17 +6,17 @@ interface IFellowship {
   members: Member[];
   goal: number; // In miles
   startDate: Date;
-  targetDate: Date;
+  endDate: Date;
 }
 
 class Fellowship implements IFellowship {
   members: Member[] = [];
   goal: number = 1800;
   startDate: Date = new Date();
-  targetDate: Date = addDays(this.startDate, 365);
+  endDate: Date = addDays(this.startDate, 365);
 
   constructor() {
-    console.log(this.members, this.goal, this.startDate, this.targetDate)
+    console.log(this.members, this.goal, this.startDate, this.endDate)
   }
 
   addMember(member: Member) {

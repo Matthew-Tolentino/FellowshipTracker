@@ -1,31 +1,40 @@
 import { Character } from "../Models/Character";
+import { Distance } from "../Models/Distance";
 import { Member } from "../Models/Member";
+import Fellowship from "./Fellowship";
 
-export function filterDataCsv(data: string): Member[] {
-  let members: Member[] = [];
-  let lines = data.split('\n')
-      
+export function filterFellowshipCsv(data: string): Fellowship {
+  let fellowship = new Fellowship();
+
+  let lines = data.split('\n');
   lines.forEach((line: string) => {
-    let m = line.split(',').filter(x => x.length > 0);
 
-    if (isCharacter(m[0])) {
-      let distances = m.splice(2, m.length).map(s => Number(s));
-      let member = {
-        name: m[1],
-        character: m[0] as Character,
+    let rowarr = line.split(',');
+
+    if (rowarr[0] == 'Start Date')
+      fellowship.startDate = new Date(rowarr[1]);
+    else if (rowarr[0] == 'End Date')
+      fellowship.endDate = new Date(rowarr[1]);
+    else if (isCharacter(rowarr[0])) {
+      let distances: Distance[] = rowarr.splice(2, rowarr.length).map((dist, i) => {
+        return {
+          date: addDays(fellowship.startDate, i),
+          distance: Number(dist)
+        } as Distance;
+      });
+      let member: Member = {
+        name: rowarr[1],
+        character:  rowarr[0] as Character,
         distances: distances,
         totalDistance: distances.reduce((p, c, i , a) => {
-          return i < a.length - 1 ? p + c : p
+          return i < a.length - 1 ? p + c.distance : p
         }, 0)
       } as Member;
-
-      members.push(member);
+      fellowship.addMember(member);
     }
   });
 
-  // console.log(members);
-
-  return members;
+  return fellowship;
 }
 
 export function isCharacter(value: string): boolean {
