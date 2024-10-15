@@ -5,6 +5,7 @@ import './styles.scss';
 import { fetchFellowshipCsv } from './Util/FetchService';
 import Members from './components/Members/Members';
 import Fellowship from './Util/Fellowship';
+import FellowshipStats from './components/FellowshipStats/FellowshipStats';
 
 function App() {
   const [fellowship, setFellowship] = useState<Fellowship>(new Fellowship());
@@ -27,6 +28,7 @@ function App() {
     <>
       <Members members={fellowship.members}/>
       <div className="App p-background">        
+        <FellowshipStats fellowship={fellowship}/>
         <Map progress={progress} members={fellowship.members}/>
       </div>
     </>

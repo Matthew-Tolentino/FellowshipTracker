@@ -60,7 +60,7 @@ const Map: React.FC<IMap> = ({ progress, members }) => {
 
   return (
     <div className="map">
-      <h1>Fellowship Progress</h1>
+      {/* <h1>Fellowship Progress</h1> */}
       <div className='map-section'>
         <MapContainer
           center={center}

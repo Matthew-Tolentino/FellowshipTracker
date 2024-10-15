@@ -2,7 +2,7 @@ import { start } from "repl";
 import { Member } from "../Models/Member";
 import { addDays } from "./Utility";
 
-interface IFellowship {
+export interface IFellowship {
   members: Member[];
   goal: number; // In miles
   startDate: Date;
