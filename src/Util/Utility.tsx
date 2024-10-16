@@ -11,8 +11,10 @@ export function filterFellowshipCsv(data: string): Fellowship {
 
     let rowarr = line.split(',');
 
+    // console.log(rowarr);
+
     if (rowarr[0] == 'Start Date')
-      fellowship.startDate = new Date(rowarr[1]);
+        fellowship.startDate = new Date(rowarr[1]);
     else if (rowarr[0] == 'End Date')
       fellowship.endDate = new Date(rowarr[1]);
     else if (isCharacter(rowarr[0].replace(' ', ''))) {
@@ -42,6 +44,17 @@ export function isCharacter(value: string): boolean {
 }
 
 export function addDays(date: Date, days: number): Date {
-  const newDate = date.setDate(date.getDate() + days);
-  return new Date(newDate);
+  const newDate = new Date(date);
+  const newDateMs = newDate.setDate(newDate.getDate() + days);
+  return new Date(newDateMs);
+}
+
+export function dayDiff(start: Date, end: Date): number {
+  const diffMs = Math.abs(end.getTime() - start.getTime());
+  // Convert ms to day
+  const diffDay = diffMs / (24 * 60 * 60 * 1000);
+
+  console.log(start, end, diffMs, diffDay);
+
+  return diffDay;
 }

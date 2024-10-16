@@ -7,6 +7,8 @@ export interface IFellowship {
   goal: number; // In miles
   startDate: Date;
   endDate: Date;
+
+  getTotalMiles: Function;
 }
 
 class Fellowship implements IFellowship {
@@ -16,11 +18,17 @@ class Fellowship implements IFellowship {
   endDate: Date = addDays(this.startDate, 365);
 
   constructor() {
-    console.log(this.members, this.goal, this.startDate, this.endDate)
+    // console.log(this.members, this.goal, this.startDate, this.endDate)
   }
 
-  addMember(member: Member) {
+  addMember(member: Member): void {
     this.members.push(member);
+  }
+
+  getTotalMiles(): number {
+    return this.members
+               .map(m => m.totalDistance)
+               .reduce((a, c) => a + c, 0);
   }
 }
 
