@@ -79,6 +79,8 @@
   height: calc((100vh - 50px) / 8);
   object-fit: contain;
 
+  min-height: 44px;
+
   box-shadow: 3px 0px 1em rgba(255,255,255,0.15);
 }
 
