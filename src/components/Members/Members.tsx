@@ -70,7 +70,7 @@ const Members: React.FC<IMembers> = ({members}) => {
           })
         }
       </div>
-      <button className='members-toggle' onClick={toggleOpen}>
+      <button className={`members-toggle ${open ? 'open' : ''}`} onClick={toggleOpen}>
         { open ? <IoIosArrowBack /> : <IoIosArrowForward /> }
       </button>
     </>

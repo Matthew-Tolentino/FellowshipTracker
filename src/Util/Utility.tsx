@@ -15,7 +15,7 @@ export function filterFellowshipCsv(data: string): Fellowship {
       fellowship.startDate = new Date(rowarr[1]);
     else if (rowarr[0] == 'End Date')
       fellowship.endDate = new Date(rowarr[1]);
-    else if (isCharacter(rowarr[0])) {
+    else if (isCharacter(rowarr[0].replace(' ', ''))) {
       let distances: Distance[] = rowarr.splice(2, rowarr.length).map((dist, i) => {
         return {
           date: addDays(fellowship.startDate, i),

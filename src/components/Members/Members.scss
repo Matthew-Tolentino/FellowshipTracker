@@ -53,10 +53,12 @@
   border: none;
   padding: 5px;
   z-index: 10001;
+
+  transition: 1s;
 }
 
 .members-toggle.open {
-  transform: translateX(50%);
+  transform: translateX(calc(50vw - 25px));
 }
 
 .member {
@@ -91,8 +93,16 @@
   padding-right: 1em;
 }
 
-@media (max-width: $bp-mobile) {
+.member-cell-3 {
+  flex-grow: 1;
+}
+
+@media (max-width: $bp-tablet) {
   .members-section {
     width: 100%;
+  }
+
+  .members-toggle.open {
+    transform: translateX(calc(100vw - 25px));
   }
 }
