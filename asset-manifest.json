@@ -1,16 +1,25 @@
 {
   "files": {
-    "main.css": "/fellowship-tracker/static/css/main.cb24e367.css",
-    "main.js": "/fellowship-tracker/static/js/main.532598f6.js",
+    "main.css": "/fellowship-tracker/static/css/main.7ea0d5b1.css",
+    "main.js": "/fellowship-tracker/static/js/main.56761001.js",
     "static/js/453.3c2791e1.chunk.js": "/fellowship-tracker/static/js/453.3c2791e1.chunk.js",
-    "static/media/MiddleEarth.jpg": "/fellowship-tracker/static/media/MiddleEarth.6c4d7c95df11b6aba25a.jpg",
+    "static/media/lotrmap.jpeg": "/fellowship-tracker/static/media/lotrmap.9a2e1c4ee383372e4392.jpeg",
+    "static/media/Frodo.jpg": "/fellowship-tracker/static/media/Frodo.9c3a4f2b7aeaf56c6803.jpg",
+    "static/media/Pippin.jpg": "/fellowship-tracker/static/media/Pippin.f7d2e54d79da85f7cf81.jpg",
+    "static/media/Merry.jpg": "/fellowship-tracker/static/media/Merry.1b41b07d118f46d66d87.jpg",
+    "static/media/Legolas.jpg": "/fellowship-tracker/static/media/Legolas.f19b8478b12a2c5d822d.jpg",
+    "static/media/Gimli.jpg": "/fellowship-tracker/static/media/Gimli.41e14c4858d3b16fb6d2.jpg",
+    "static/media/Sam.jpg": "/fellowship-tracker/static/media/Sam.72ca39e32effbf75ed32.jpg",
+    "static/media/Gandalf.jpg": "/fellowship-tracker/static/media/Gandalf.55150213d8aa89fa2f34.jpg",
+    "static/media/Aragorn.jpg": "/fellowship-tracker/static/media/Aragorn.c33161920ff1357b50a9.jpg",
+    "static/media/Boromir.jpg": "/fellowship-tracker/static/media/Boromir.0ede45ab6c8e4e37f346.jpg",
     "index.html": "/fellowship-tracker/index.html",
-    "main.cb24e367.css.map": "/fellowship-tracker/static/css/main.cb24e367.css.map",
-    "main.532598f6.js.map": "/fellowship-tracker/static/js/main.532598f6.js.map",
+    "main.7ea0d5b1.css.map": "/fellowship-tracker/static/css/main.7ea0d5b1.css.map",
+    "main.56761001.js.map": "/fellowship-tracker/static/js/main.56761001.js.map",
     "453.3c2791e1.chunk.js.map": "/fellowship-tracker/static/js/453.3c2791e1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cb24e367.css",
-    "static/js/main.532598f6.js"
+    "static/css/main.7ea0d5b1.css",
+    "static/js/main.56761001.js"
   ]
 }
