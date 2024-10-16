@@ -26,8 +26,8 @@ function App() {
 
   return (
     <>
-      <Members members={fellowship.members}/>
       <div className="App p-background">        
+        <Members members={fellowship.members}/>
         <FellowshipStats fellowship={fellowship}/>
         <Map progress={progress} members={fellowship.members}/>
       </div>
