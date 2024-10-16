@@ -54,7 +54,7 @@ export function dayDiff(start: Date, end: Date): number {
   // Convert ms to day
   const diffDay = diffMs / (24 * 60 * 60 * 1000);
 
-  console.log(start, end, diffMs, diffDay);
+  // console.log(start, end, diffMs, diffDay);
 
   return diffDay;
 }

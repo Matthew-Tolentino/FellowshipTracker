@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import L, { LatLngExpression } from 'leaflet';
-import { MapContainer, ImageOverlay, Marker, Polyline, useMap, Popup, useMapEvent } from 'react-leaflet';
+import { MapContainer, ImageOverlay, Marker, Polyline, useMap, Popup, useMapEvent, CircleMarker } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import './Map.scss';
 // import LOTRmap from '../../imgs/MiddleEarth.jpg'
+import { GiRing } from "react-icons/gi";
+import pip from "../../imgs/Pippin.jpg";
 import LOTRmap from '../../imgs/lotrmap.jpeg'
 
 import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png';
@@ -23,6 +25,15 @@ const iconMarker = new L.Icon({
   popupAnchor: [1, -34], // Popup position relative to the icon
   shadowSize: [41, 41], // Shadow size of the marker icon
 });
+
+const pulseMapMarker = new L.Icon({
+    // className: 'pulse-marker',
+    // html: `<div class="pulsing-marker"><div class="icon"><GiRing /></div></div>`,
+    iconUrl: pip,
+    // shadowUrl: pip,
+    iconSize: [40, 40],
+    iconAnchor: [20, 40]
+  })
 
 const ClickHandler = () => {
   useMapEvent('click', (e) => {
@@ -56,7 +67,7 @@ interface IMap {
 
 const Map: React.FC<IMap> = ({ progress, members }) => {
   const center: LatLngExpression = [1200, 1600];
-  const mapData = new MapData();
+  const mapData = new MapData(progress);
 
   return (
     <div className="map">
@@ -72,17 +83,27 @@ const Map: React.FC<IMap> = ({ progress, members }) => {
         >
           <ImageOverlay url={LOTRmap} bounds={imageBounds}/>
           <FitBounds />
-          <SetViewOnFocus coord={mapData.getPathProgress(progress).at(-1)}/>
-          {/* <Marker position={center} icon={iconMarker}>
+          <SetViewOnFocus coord={mapData.progressPoint}/>
+          {/* <Marker position={mapData.progressPoint} icon={pulseMapMarker}>
             <Popup>This is a marker on the image for testing</Popup>
           </Marker> */}
           <Polyline positions={mapData.pathCoords} color={mapData.totalPathColor} weight={10} stroke={true}>
             <Popup>This is the path.</Popup>
           </Polyline>
 
-          <Polyline positions={mapData.getPathProgress(progress)} color={mapData.progressPathColor} weight={8}>
+          <Polyline positions={mapData.progressCoords} color={mapData.progressPathColor} weight={8}>
             <Popup>This is the progress path.</Popup>
           </Polyline>
+
+          <CircleMarker 
+            center={mapData.progressPoint} 
+            radius={6}
+            color={mapData.markerColor}
+            fillColor={mapData.markerFillColor}
+            fillOpacity={1}
+          >
+            <Popup>Fellowship</Popup>
+          </CircleMarker>
 
           <ClickHandler />
         </MapContainer>

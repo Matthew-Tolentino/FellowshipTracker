@@ -7,7 +7,7 @@ export const fetchFellowshipCsv = async (setFellowship: any, url: string) => {
 
       let fellowship = filterFellowshipCsv(data);
 
-      console.log(fellowship);
+      // console.log(fellowship);
 
       setFellowship(fellowship);
     });

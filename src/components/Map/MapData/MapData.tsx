@@ -1,26 +1,36 @@
 import { LatLngExpression, LatLngLiteral } from "leaflet";
 
 interface IMapData {
-  pathCoords: LatLngExpression[]
-}
+  pathCoords: LatLngExpression[];
+  progressCoords: LatLngExpression[];
 
-const c = 'rgb(169, 185, 245, 0.5)'
-const c2 = 'rgb(84, 118, 247, 0.95)'
+  totalPathColor: string;
+  progressPathColor: string;
+}
 
 class MapData implements IMapData {
   pathCoords: LatLngExpression[] = pathCoordinates;
-  totalPathColor: string = c;
-  progressPathColor: string = c2;
+  progressCoords: LatLngExpression[];
+  totalPathColor: string = 'rgb(169, 185, 245, 0.5)';
+  progressPathColor: string = 'rgb(84, 118, 247, 0.95)';
+  markerColor: string = 'rgb(0,0,0, 1)';
+  markerFillColor: string = 'rgb(153, 5, 0, 1)';
 
-  constructor() { }
+  constructor(progressPercent: number) {
+    this.progressCoords = this.getPathProgress(progressPercent);
+  }
+
+  get progressPoint(): LatLngExpression {
+    return this.progressCoords.at(-1) as LatLngExpression;
+  }
 
   // percentage will be 0-100
   getPathProgress(percentage: number) {
+    console.log(percentage);
     let {progressPoint, index} = this.getPathProgressPoint(percentage)
 
     let progressLine = this.pathCoords.slice(0, index);
 
-    // return {progressPoint, progressLine};
     let pathProgress = [...progressLine, progressPoint] as LatLngExpression[];
 
     // console.log(pathProgress);
@@ -37,7 +47,6 @@ class MapData implements IMapData {
       totDist += this.distanceTo(this.pathCoords[i-1] as number[], this.pathCoords[i] as number[]);
       cumDist.push(totDist);     
     }
-
     
     let targDist = totDist * percentage;
 
