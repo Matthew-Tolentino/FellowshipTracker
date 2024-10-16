@@ -1,0 +1,64 @@
+// App Colors
+$base-color: #F1F6F9;
+$base-color2: #b8cfdc;
+$base-color3: #95b6c9;
+
+$background-img: url(./imgs/background.jpg);
+
+$bp-desktop: 1800px;
+$bp-laptop: 1024px;
+$bp-tablet: 768px;
+$bp-mobile: 560px;
+
+// Global defaults
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'MedievalSharp', 'Poppins', sans-serif;
+  list-style: none;
+  text-decoration: none;
+  overflow-wrap: break-word;  
+}
+
+// Parchment Background
+.p-background {
+  background-image: $background-img;
+  background-repeat: repeat;
+  background-size: auto;
+  background-position: top left;
+}
+
+.p-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3); /* Adjust the alpha value to control darkness */
+  z-index: 1; /* Place it above the background */
+}
+
+.p-background > * {
+  position: relative; /* Ensure child elements are above the overlay */
+  z-index: 2; 
+}
+
+// Scrollbar
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: $base-color;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $base-color2;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $base-color3;
+}
