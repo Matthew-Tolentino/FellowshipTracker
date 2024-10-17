@@ -81,7 +81,7 @@
 .member img {
   // flex-grow: 1;
   max-width: 100%;
-  height: calc((100vh - 50px) / 8);
+  height: calc(((var(--vh) * 100) - 50px) / 8);
   object-fit: contain;
 
   min-height: 44px;
