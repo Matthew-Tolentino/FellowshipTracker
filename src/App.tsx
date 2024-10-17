@@ -7,8 +7,6 @@ import Members from './components/Members/Members';
 import Fellowship from './Util/Fellowship';
 import FellowshipStats from './components/FellowshipStats/FellowshipStats';
 
-var vhv = -1;
-
 function App() {
   const [fellowship, setFellowship] = useState<Fellowship>(new Fellowship());
   const [progress, setProgress] = useState(0);
@@ -29,7 +27,6 @@ function App() {
   useEffect(() => {
     const setViewportHeight = () => {
       const vh = window.innerHeight * 0.01;
-      vhv = vh;
       document.documentElement.style.setProperty('--vh', `${vh}px`);
     };
 
@@ -45,7 +42,6 @@ function App() {
   return (
     <>
       <div className="App p-background">
-        vh {vhv}       
       {/* <div className="App">         */}
         <Members members={fellowship.members}/>
         <FellowshipStats fellowship={fellowship}/>
