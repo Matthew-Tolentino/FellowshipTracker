@@ -6,7 +6,7 @@ body {
 }
 
 .App {
-  height: 100vh;
+  height: calc(var(--vh) * 100);
   width: 100vw;
   text-align: center;
   // padding: 1em;
