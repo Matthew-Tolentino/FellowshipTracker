@@ -1,11 +1,12 @@
 @import '../../styles.scss';
 
 .members-section {
-  height: 100%;
+  min-height: 100%;
   width: $bp-tablet;
   // border: green;
   // border-style: solid;
-  overflow-y: hidden;
+  // overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: visible;
   position: absolute;
   display: flex;
@@ -81,7 +82,7 @@
 .member img {
   // flex-grow: 1;
   max-width: 100%;
-  height: calc(((var(--vh) * 100) - 50px) / 8);
+  height: calc(((var(--vh) * 100) - 60px) / 9);
   object-fit: contain;
 
   min-height: 44px;
