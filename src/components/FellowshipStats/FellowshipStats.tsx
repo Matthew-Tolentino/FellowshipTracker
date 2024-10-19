@@ -13,7 +13,7 @@ const FellowshipStats: React.FC<IFellowshipStats> = (({fellowship}) => {
       <h1>Fellowship Progress</h1>
       <div className='stats'>
         <span>
-          Day {Math.floor(dayDiff(fellowship.startDate, new Date()))} of {dayDiff(fellowship.startDate, fellowship.endDate)}
+          Day {Math.floor(dayDiff(fellowship.startDate, new Date()))} of {dayDiff(fellowship.startDate, fellowship.endDate).toFixed(2)}
         </span>
         <GiRing />
         <span>{fellowship.getTotalMiles()} mi / {fellowship.goal} mi Traveled</span>
