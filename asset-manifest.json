@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/fellowship-tracker/static/css/main.43063dab.css",
-    "main.js": "/fellowship-tracker/static/js/main.7068d4f0.js",
+    "main.js": "/fellowship-tracker/static/js/main.3ee07f09.js",
     "static/js/453.3c2791e1.chunk.js": "/fellowship-tracker/static/js/453.3c2791e1.chunk.js",
     "static/media/lotrmap.jpeg": "/fellowship-tracker/static/media/lotrmap.9a2e1c4ee383372e4392.jpeg",
     "static/media/Frodo.jpg": "/fellowship-tracker/static/media/Frodo.9c3a4f2b7aeaf56c6803.jpg",
@@ -15,11 +15,11 @@
     "static/media/Boromir.jpg": "/fellowship-tracker/static/media/Boromir.0ede45ab6c8e4e37f346.jpg",
     "index.html": "/fellowship-tracker/index.html",
     "main.43063dab.css.map": "/fellowship-tracker/static/css/main.43063dab.css.map",
-    "main.7068d4f0.js.map": "/fellowship-tracker/static/js/main.7068d4f0.js.map",
+    "main.3ee07f09.js.map": "/fellowship-tracker/static/js/main.3ee07f09.js.map",
     "453.3c2791e1.chunk.js.map": "/fellowship-tracker/static/js/453.3c2791e1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.43063dab.css",
-    "static/js/main.7068d4f0.js"
+    "static/js/main.3ee07f09.js"
   ]
 }
