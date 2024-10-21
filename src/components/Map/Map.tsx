@@ -99,7 +99,7 @@ const Map: React.FC<IMap> = ({ progress, members }) => {
             center={mapData.progressPoint} 
             radius={6}
             color={mapData.markerColor}
-            fillColor={mapData.markerFillColor}
+            fillColor={mapData.progressPathColor}
             fillOpacity={1}
           >
             <Popup>Fellowship</Popup>

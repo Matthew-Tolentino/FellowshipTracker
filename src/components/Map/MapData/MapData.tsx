@@ -13,7 +13,7 @@ class MapData implements IMapData {
   progressCoords: LatLngExpression[];
   totalPathColor: string = 'rgb(169, 185, 245, 0.5)';
   progressPathColor: string = 'rgb(84, 118, 247, 0.95)';
-  markerColor: string = 'rgb(0,0,0, 1)';
+  markerColor: string = 'rgb(255,255,255, 1)';
   markerFillColor: string = 'rgb(153, 5, 0, 1)';
 
   constructor(progressPercent: number) {
