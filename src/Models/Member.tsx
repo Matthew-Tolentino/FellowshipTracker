@@ -6,4 +6,5 @@ export interface Member {
   character: Character;
   distances: Distance[];
   totalDistance: number;
+  portrat?: string;
 }

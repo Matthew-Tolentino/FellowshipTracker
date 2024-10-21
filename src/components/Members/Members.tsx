@@ -26,7 +26,7 @@ function GetPortrait(character: Character) {
     case Character.Gimli:
       return Gimli;
     case Character.Legolas:
-      return Legolas;
+      return Legolas; //https://i.imgur.com/7WAyEyq.jpeg
     case Character.Merry:
       return Merry;
     case Character.Pippin:
@@ -57,7 +57,7 @@ const Members: React.FC<IMembers> = ({members}) => {
           members.map((member: Member, index: number) => {
             return (
               <div className='member'>
-                <img src={GetPortrait(member.character)}/>
+                <img src={member.portrat ? member.portrat : GetPortrait(member.character)}/>
                 <div className='member-cell-2'>
                   <span>{member.character}</span>
                   <span>{member.name}</span>

@@ -18,7 +18,7 @@ export function filterFellowshipCsv(data: string): Fellowship {
     else if (rowarr[0] == 'End Date')
       fellowship.endDate = new Date(rowarr[1]);
     else if (isCharacter(rowarr[0].replace(' ', ''))) {
-      let distances: Distance[] = rowarr.splice(2, rowarr.length).map((dist, i) => {
+      let distances: Distance[] = rowarr.splice(3, rowarr.length).map((dist, i) => {
         return {
           date: addDays(fellowship.startDate, i),
           distance: Number(dist)
@@ -28,6 +28,7 @@ export function filterFellowshipCsv(data: string): Fellowship {
         name: rowarr[1],
         character:  rowarr[0] as Character,
         distances: distances,
+        portrat: rowarr[2],
         totalDistance: distances.reduce((p, c, i , a) => {
           return i < a.length - 1 ? p + c.distance : p
         }, 0)
