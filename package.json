@@ -2,7 +2,8 @@
   "name": "fellowship-tracker",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://fellowship.lemtolen.com",
+  "homepage": "https://matthew-tolentino.github.io/fellowship-tracker",
+  // "homepage": "https://fellowship.lemtolen.",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -22,7 +23,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
-    "build": "react-scripts build && copy CNAME build\\",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
