@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/fellowship-tracker/static/css/main.43063dab.css",
-    "main.js": "/fellowship-tracker/static/js/main.3ee07f09.js",
-    "static/js/453.3c2791e1.chunk.js": "/fellowship-tracker/static/js/453.3c2791e1.chunk.js",
-    "static/media/lotrmap.jpeg": "/fellowship-tracker/static/media/lotrmap.9a2e1c4ee383372e4392.jpeg",
-    "static/media/Frodo.jpg": "/fellowship-tracker/static/media/Frodo.9c3a4f2b7aeaf56c6803.jpg",
-    "static/media/Pippin.jpg": "/fellowship-tracker/static/media/Pippin.f7d2e54d79da85f7cf81.jpg",
-    "static/media/Merry.jpg": "/fellowship-tracker/static/media/Merry.1b41b07d118f46d66d87.jpg",
-    "static/media/Legolas.jpg": "/fellowship-tracker/static/media/Legolas.f19b8478b12a2c5d822d.jpg",
-    "static/media/Gimli.jpg": "/fellowship-tracker/static/media/Gimli.41e14c4858d3b16fb6d2.jpg",
-    "static/media/Sam.jpg": "/fellowship-tracker/static/media/Sam.72ca39e32effbf75ed32.jpg",
-    "static/media/Gandalf.jpg": "/fellowship-tracker/static/media/Gandalf.55150213d8aa89fa2f34.jpg",
-    "static/media/Aragorn.jpg": "/fellowship-tracker/static/media/Aragorn.c33161920ff1357b50a9.jpg",
-    "static/media/Boromir.jpg": "/fellowship-tracker/static/media/Boromir.0ede45ab6c8e4e37f346.jpg",
-    "index.html": "/fellowship-tracker/index.html",
-    "main.43063dab.css.map": "/fellowship-tracker/static/css/main.43063dab.css.map",
-    "main.3ee07f09.js.map": "/fellowship-tracker/static/js/main.3ee07f09.js.map",
-    "453.3c2791e1.chunk.js.map": "/fellowship-tracker/static/js/453.3c2791e1.chunk.js.map"
+    "main.css": "/static/css/main.43063dab.css",
+    "main.js": "/static/js/main.352169fe.js",
+    "static/js/453.3c2791e1.chunk.js": "/static/js/453.3c2791e1.chunk.js",
+    "static/media/lotrmap.jpeg": "/static/media/lotrmap.9a2e1c4ee383372e4392.jpeg",
+    "static/media/Frodo.jpg": "/static/media/Frodo.9c3a4f2b7aeaf56c6803.jpg",
+    "static/media/Pippin.jpg": "/static/media/Pippin.f7d2e54d79da85f7cf81.jpg",
+    "static/media/Merry.jpg": "/static/media/Merry.1b41b07d118f46d66d87.jpg",
+    "static/media/Legolas.jpg": "/static/media/Legolas.f19b8478b12a2c5d822d.jpg",
+    "static/media/Gimli.jpg": "/static/media/Gimli.41e14c4858d3b16fb6d2.jpg",
+    "static/media/Sam.jpg": "/static/media/Sam.72ca39e32effbf75ed32.jpg",
+    "static/media/Gandalf.jpg": "/static/media/Gandalf.55150213d8aa89fa2f34.jpg",
+    "static/media/Aragorn.jpg": "/static/media/Aragorn.c33161920ff1357b50a9.jpg",
+    "static/media/Boromir.jpg": "/static/media/Boromir.0ede45ab6c8e4e37f346.jpg",
+    "index.html": "/index.html",
+    "main.43063dab.css.map": "/static/css/main.43063dab.css.map",
+    "main.352169fe.js.map": "/static/js/main.352169fe.js.map",
+    "453.3c2791e1.chunk.js.map": "/static/js/453.3c2791e1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.43063dab.css",
-    "static/js/main.3ee07f09.js"
+    "static/js/main.352169fe.js"
   ]
 }
