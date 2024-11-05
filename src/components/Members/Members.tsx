@@ -48,14 +48,14 @@ const Members: React.FC<IMembers> = ({members}) => {
   const toggleOpen = () => {
     setOpen(!open);
   };
-  
+
   members.sort((m1, m2) => m2.totalDistance - m1.totalDistance);
 
   return (
     <>
       <div className={`members-section p-background ${open ? 'open' : ''}`}>
         <div className="members-header">
-          <span>Fellowship of the Ring</span>
+          <span>Fellowship Leaderboard</span>
         </div>
         {
           members.map((member: Member, index: number) => {
