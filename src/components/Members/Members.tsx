@@ -12,6 +12,8 @@ import Pippin from '../../imgs/Pippin.jpg';
 import Sam from '../../imgs/Sam.jpg';
 import { useState } from 'react';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
+import { MdMenu } from "react-icons/md";
+import { IoMdClose } from "react-icons/io";
 
 function GetPortrait(character: Character) {
   switch (character) {
@@ -46,6 +48,8 @@ const Members: React.FC<IMembers> = ({members}) => {
   const toggleOpen = () => {
     setOpen(!open);
   };
+  
+  members.sort((m1, m2) => m2.totalDistance - m1.totalDistance);
 
   return (
     <>
@@ -71,7 +75,7 @@ const Members: React.FC<IMembers> = ({members}) => {
         }
       </div>
       <button className={`members-toggle ${open ? 'open' : ''}`} onClick={toggleOpen}>
-        { open ? <IoIosArrowBack /> : <IoIosArrowForward /> }
+        {open ? <IoMdClose size="2em" /> : <MdMenu size="2em" /> }
       </button>
     </>
   )

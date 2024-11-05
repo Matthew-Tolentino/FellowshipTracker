@@ -64,7 +64,7 @@
 
 .members-toggle.open {
   // transform: translate(calc($bp-tablet - 41px), -16px);
-  transform: translateX(calc($bp-tablet - 25px));
+  transform: translate(calc($bp-tablet - 32px), -4px);
 }
 
 .member {
