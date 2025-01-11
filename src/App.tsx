@@ -7,6 +7,27 @@ import Members from './components/Members/Members';
 import Fellowship from './Util/Fellowship';
 import FellowshipStats from './components/FellowshipStats/FellowshipStats';
 
+import { initializeApp } from 'firebase/app';
+import { getFirestore } from 'firebase/firestore';
+import { getAuth } from 'firebase/auth';
+
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { useCollectionData } from 'react-firebase-hooks/firestore';
+import { SignIn, SignOut } from './Auth/Auth';
+
+initializeApp({
+  apiKey: "AIzaSyCH4oqvkcN3e64k-9gtFke81tVCiFRNTT8",
+  authDomain: "fellowship-tracker-b857a.firebaseapp.com",
+  projectId: "fellowship-tracker-b857a",
+  storageBucket: "fellowship-tracker-b857a.firebasestorage.app",
+  messagingSenderId: "934160763642",
+  appId: "1:934160763642:web:91ab4e25b2959f254b9743",
+  measurementId: "G-156BGKFEGF"
+})
+
+const auth = getAuth();
+const firestore = getFirestore();
+
 function App() {
   const [fellowship, setFellowship] = useState<Fellowship>(new Fellowship());
   const [progress, setProgress] = useState(0);
@@ -39,13 +60,22 @@ function App() {
     };
   }, []);
 
+  const [user] = useAuthState(auth);
+
   return (
     <>
       <div className="App p-background">
-      {/* <div className="App">         */}
-        <Members members={fellowship.members}/>
-        <FellowshipStats fellowship={fellowship}/>
-        <Map progress={progress} members={fellowship.members}/>
+          {
+            user ?
+            <>
+              <Members members={fellowship.members}/>
+              <FellowshipStats fellowship={fellowship}/>
+              <Map progress={progress} members={fellowship.members}/>
+              <SignOut />
+            </>
+            :
+            <SignIn />
+          }
       </div>
     </>
   );
